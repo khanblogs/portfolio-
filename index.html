@@ -412,6 +412,12 @@
         white-space: nowrap;
       }
       .case-visual { display: flex; flex-direction: column; gap: 16px; }
+      .hld { grid-column: 1 / -1; border: 1px solid var(--line); border-radius: var(--r-md); padding: clamp(18px, 2.6vw, 28px); background: var(--bg-2); }
+      .hld h4 { margin: 8px 0 2px; font-size: 19px; }
+      .hld-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 26px; margin-top: 14px; }
+      .hld-note { color: var(--muted); font-size: 14.5px; line-height: 1.65; }
+      .hld-note strong { display: block; color: var(--text); margin-bottom: 3px; }
+      @media (max-width: 900px) { .hld-notes { grid-template-columns: 1fr; } }
       .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .metric {
         border: 1px solid var(--line);
@@ -986,6 +992,48 @@
             </div>
           </article>
 
+
+          <div class="hld reveal">
+            <span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">HIGH-LEVEL DESIGN — AZZY AGENTS</span>
+            <h4>Layered, provider-agnostic agent architecture</h4>
+            <figure class="diagram" style="margin:14px 0 4px">
+              <svg class="dg" viewBox="0 0 1040 300" role="img" aria-label="Azzy Agents high-level design: users reach the app API and UI, agent workers call an OmniRoute LLM gateway, which routes via freellmapi to swappable model providers with a fallback chain; local embeddings and a data store sit below, all deployed with Docker Compose on EC2 with healthchecks, backups and TLS">
+                <defs>
+                  <marker id="ah9" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                  <marker id="ah9a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                </defs>
+                <rect class="box" x="8" y="36" width="150" height="84" />
+                <text x="83" y="72" text-anchor="middle">users</text><text class="sub" x="83" y="92" text-anchor="middle">HTTPS · TLS</text>
+                <rect class="box" x="186" y="36" width="190" height="84" />
+                <text x="281" y="72" text-anchor="middle">app — API + UI</text><text class="sub" x="281" y="92" text-anchor="middle">agent sessions · tasks</text>
+                <rect class="box-hl" x="404" y="36" width="190" height="84" />
+                <text x="499" y="72" text-anchor="middle">agent workers</text><text class="sub" x="499" y="92" text-anchor="middle" style="fill:var(--accent)">skills · tools · memory</text>
+                <rect class="box-hl" x="622" y="36" width="190" height="84" />
+                <text x="717" y="72" text-anchor="middle">OmniRoute gateway</text><text class="sub" x="717" y="92" text-anchor="middle" style="fill:var(--accent)">routing · failover policy</text>
+                <rect class="box" x="840" y="36" width="192" height="84" />
+                <text x="936" y="66" text-anchor="middle">freellmapi → providers</text><text class="sub" x="936" y="86" text-anchor="middle">multi-model fallback chain</text><text class="sub" x="936" y="102" text-anchor="middle">no vendor lock-in</text>
+                <rect class="box" x="404" y="176" width="190" height="72" />
+                <text x="499" y="206" text-anchor="middle">local embeddings</text><text class="sub" x="499" y="226" text-anchor="middle">self-hosted retrieval</text>
+                <rect class="box" x="622" y="176" width="190" height="72" />
+                <text x="717" y="206" text-anchor="middle">data &amp; memory store</text><text class="sub" x="717" y="226" text-anchor="middle">sessions · vectors · files</text>
+                <rect class="box" x="8" y="176" width="368" height="72" />
+                <text x="192" y="206" text-anchor="middle">operations layer</text><text class="sub" x="192" y="226" text-anchor="middle">Docker Compose on EC2 · healthchecks · watchdog · scheduled backups · cert management</text>
+                <path class="edge" d="M158,78 H182" marker-end="url(#ah9)"/>
+                <path class="edge-hl" d="M376,78 H400" marker-end="url(#ah9a)"/>
+                <path class="edge-hl" d="M594,78 H618" marker-end="url(#ah9a)"/>
+                <path class="edge" d="M812,78 H836" marker-end="url(#ah9)"/>
+                <path class="edge" d="M499,120 V172" marker-end="url(#ah9)"/>
+                <path class="edge" d="M717,120 V172" marker-end="url(#ah9)"/>
+              </svg>
+              <figcaption>Request flow left → right; everything below the line is self-hosted — the only external dependency is raw model inference, and even that fails over.</figcaption>
+            </figure>
+            <div class="hld-notes">
+              <div class="hld-note"><strong>Design principle</strong>Providers are interchangeable parts, not dependencies. The gateway owns routing, so models can be swapped, repriced or replaced without touching agent code.</div>
+              <div class="hld-note"><strong>Failover &amp; cost</strong>A cost-optimised fallback chain keeps inference running at near-zero marginal cost; embeddings and memory stay local, so retrieval never depends on an outside API.</div>
+              <div class="hld-note"><strong>Operations</strong>One Compose stack on EC2 with healthchecks, a watchdog, scheduled backups and managed certificates — small surface, production discipline.</div>
+            </div>
+          </div>
+
           <!-- Case 6: PBM Portal -->
           <article class="case reveal">
             <div>
@@ -1043,11 +1091,11 @@
             <div>
               <div class="case-index">CASE 07</div>
               <h3>Umangverse — the immersive UMANG experience</h3>
-              <div class="context"><strong>NeGD (MeitY) · UMANG ecosystem</strong> — platform &amp; security</div>
-              <p><strong>The brief:</strong> platform ownership for Umangverse — the immersive web experience in the UMANG ecosystem — covering deployment, hardening and security assurance to the same standard as the core platform.</p>
+              <div class="context"><strong>NeGD (MeitY) · UMANG ecosystem</strong> — designed &amp; built end-to-end</div>
+              <p><strong>The brief:</strong> design and build Umangverse — the immersive web experience in the UMANG ecosystem — and own its platform end-to-end: deployment, hardening and security assurance to the same standard as the core platform.</p>
               <h4>What was done</h4>
               <ul>
-                <li>Deployed the experience as a <strong>containerized service behind a reverse proxy with TLS</strong> on NeGD infrastructure — the application listens on loopback only; the proxy is the single public face.</li>
+                <li>Built the experience end-to-end and deployed it as a <strong>containerized service behind a reverse proxy with TLS</strong> on NeGD infrastructure — the application listens on loopback only; the proxy is the single public face.</li>
                 <li>Delivered a <strong>full SAST review</strong> of the codebase — a findings report with severity ratings and remediation guidance the team could act on directly.</li>
                 <li>Took the experience to its <strong>v2.0 release</strong> under the same release discipline as the core UMANG platform.</li>
               </ul>
@@ -1081,6 +1129,42 @@
               </figure>
             </div>
           </article>
+
+
+          <div class="hld reveal">
+            <span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">HIGH-LEVEL DESIGN — UMANGVERSE</span>
+            <h4>Minimal-surface deployment architecture</h4>
+            <figure class="diagram" style="margin:14px 0 4px">
+              <svg class="dg" viewBox="0 0 1040 300" role="img" aria-label="Umangverse high-level design: visitors reach an Apache TLS reverse proxy, the only public face, which fronts the containerized Umangverse application bound to loopback on a NeGD virtual machine; a SAST assurance layer and operations controls sit below">
+                <defs>
+                  <marker id="ah10" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                  <marker id="ah10a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                </defs>
+                <rect class="box" x="8" y="36" width="150" height="84" />
+                <text x="83" y="72" text-anchor="middle">visitors</text><text class="sub" x="83" y="92" text-anchor="middle">UMANG ecosystem</text>
+                <rect class="box" x="186" y="36" width="200" height="84" />
+                <text x="286" y="72" text-anchor="middle">Apache reverse proxy</text><text class="sub" x="286" y="92" text-anchor="middle">TLS termination · only public face</text>
+                <rect class="box-hl" x="414" y="20" width="618" height="116" />
+                <text x="723" y="46" text-anchor="middle">NeGD virtual machine — Docker host</text>
+                <rect class="box" x="434" y="58" width="270" height="62" />
+                <text x="569" y="84" text-anchor="middle">Umangverse container</text><text class="sub" x="569" y="104" text-anchor="middle">application · loopback :8080 only</text>
+                <rect class="box" x="724" y="58" width="288" height="62" />
+                <text x="868" y="84" text-anchor="middle">experience assets</text><text class="sub" x="868" y="104" text-anchor="middle">static content · media · config</text>
+                <rect class="box" x="186" y="176" width="380" height="72" />
+                <text x="376" y="206" text-anchor="middle">security assurance</text><text class="sub" x="376" y="226" text-anchor="middle">full SAST review · findings report · remediation cycle</text>
+                <rect class="box" x="594" y="176" width="438" height="72" />
+                <text x="813" y="206" text-anchor="middle">operations</text><text class="sub" x="813" y="226" text-anchor="middle">container lifecycle · proxy config under change control · v2.0 release discipline</text>
+                <path class="edge" d="M158,78 H182" marker-end="url(#ah10)"/>
+                <path class="edge-hl" d="M386,78 H430" marker-end="url(#ah10a)"/>
+              </svg>
+              <figcaption>One public door, everything else behind it: the application port exists only on loopback, so the proxy is the entire attack surface — and it is the hardened part.</figcaption>
+            </figure>
+            <div class="hld-notes">
+              <div class="hld-note"><strong>Design principle</strong>Minimal public surface by architecture, not by firewall rules alone: bind the app to loopback, publish only the proxy, terminate TLS at the edge.</div>
+              <div class="hld-note"><strong>Assurance</strong>The codebase went through a full SAST review with a severity-rated findings report — security is a release gate, not an afterthought.</div>
+              <div class="hld-note"><strong>Delivery</strong>Containerized deployment means the same image promotes from test to production unchanged, under the UMANG platform's release discipline.</div>
+            </div>
+          </div>
 
           <!-- Case 8: Production fleet -->
           <article class="case reveal">
