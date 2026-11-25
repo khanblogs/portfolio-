@@ -741,7 +741,7 @@
           <div class="section-head reveal">
             <span class="kicker no-bar mono" style="display:block;margin-bottom:6px;color:var(--accent);letter-spacing:0.12em;">01 — SELECTED WORK</span>
             <h2>Case studies, not bullet points.</h2>
-            <p class="lede">Eight engagements where platform engineering moved the needle — the problem, the architecture, and the measured outcome. Numbers below come straight from production.</p>
+            <p class="lede">Nine engagements where platform engineering moved the needle — the problem, the architecture, and the measured outcome. Numbers below come straight from production.</p>
           </div>
 
           <!-- Case 1: UMANG -->
@@ -1213,6 +1213,74 @@
                   <path class="edge-hl" d="M290,140 C304,140 306,176 318,176" marker-end="url(#ah8a)"/>
                 </svg>
                 <figcaption>Three networks, nineteen servers, one disciplined way in — and a rollback for every release.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+
+          <!-- Case 9: HMS Voice AI -->
+          <article class="case reveal">
+            <div>
+              <div class="case-index">CASE 09</div>
+              <h3>HMS Voice AI — the doctor dictates, the system writes</h3>
+              <div class="context"><strong>NeGD (MeitY) · HMS hospital platform</strong> — Voice AI designed, built &amp; integrated by Shahrukh</div>
+              <p><strong>The use case:</strong> a doctor finishes a patient round and simply <em>speaks</em> — in the Hindi-English mix (Hinglish) she actually uses. Sixty seconds later a structured clinical note is on screen for her confirmation. No typing, no templates, no data leaving the hospital.</p>
+              <h4>The scenario, as implemented</h4>
+              <ul>
+                <li><strong>1 · Dictate</strong> — the doctor dictates from the browser voice panel: symptoms, vitals, diagnosis, medicines, advice — in Hindi, Hinglish or English.</li>
+                <li><strong>2 · Transcribe</strong> — LiveKit streams the audio (WebRTC); <strong>faster-whisper</strong> transcribes it on the hospital's own server.</li>
+                <li><strong>3 · Structure</strong> — <strong>MedGemma 4B</strong> (Google's medical LLM, self-hosted on Ollama) turns the transcript into a structured note — fields, doses and vitals in their right places.</li>
+                <li><strong>4 · Confirm</strong> — the doctor reviews and confirms on screen. <strong>Nothing is ever saved without clinician confirmation</strong> — the confirm-gate is architectural, not a setting.</li>
+                <li><strong>5 · Save &amp; speak back</strong> — the note saves through the existing HMS service APIs, and <strong>Kokoro TTS</strong> speaks the confirmation summary back to the doctor.</li>
+              </ul>
+              <h4>From POC to hospital-wide</h4>
+              <ul>
+                <li>Proved as an <strong>isolated POC</strong> alongside the live system — zero downtime, live data untouched — passing validation across EMR, OPD, Pathology, Radiology, Pharmacy, Billing, IPD and Discharge with <strong>100% field accuracy on Hinglish dictation</strong>.</li>
+                <li>Then <strong>integrated into every clinical module</strong> of the 20-microservice HMS — EMR doctor notes, IPD rounds and nurse notes, ICU, OT, radiology, pathology and discharge — behind the platform's JWT gateway.</li>
+                <li>Performance-tuned in production: note structuring went from <strong>~115 seconds to ~5 seconds</strong> (warm model, tuned inference); a 33-second dictation is review-ready in about a minute on CPU alone.</li>
+                <li>Every model is <strong>free and open-source, self-hosted</strong> — patient audio is processed inside the hospital's own servers and never leaves. POC cost: ₹0.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">Voice AI</span><span class="chip">faster-whisper</span><span class="chip">MedGemma</span>
+                <span class="chip">Ollama</span><span class="chip">LiveKit · WebRTC</span><span class="chip">Kokoro TTS</span>
+                <span class="chip">Docker</span><span class="chip">.NET microservices</span><span class="chip">YARP gateway</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              <div class="metric-row">
+                <div class="metric"><div class="n">20</div><div class="l">microservices on the HMS platform</div></div>
+                <div class="metric"><div class="n">~5s</div><div class="l">to structure a note — was ~115s</div></div>
+                <div class="metric"><div class="n">0</div><div class="l">patient audio leaves the hospital</div></div>
+              </div>
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="HMS Voice AI flow: doctor dictates in Hinglish, LiveKit streams audio, Whisper transcribes, MedGemma structures the note, the doctor confirms, and the note saves via HMS APIs with a spoken confirmation">
+                  <defs>
+                    <marker id="ah11" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah11a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="30" width="150" height="58" />
+                  <text x="83" y="55" text-anchor="middle">doctor dictates</text><text class="sub" x="83" y="73" text-anchor="middle">Hinglish · browser mic</text>
+                  <rect class="box" x="186" y="30" width="150" height="58" />
+                  <text x="261" y="55" text-anchor="middle">faster-whisper</text><text class="sub" x="261" y="73" text-anchor="middle">LiveKit stream · STT</text>
+                  <rect class="box-hl" x="364" y="30" width="148" height="58" />
+                  <text x="438" y="55" text-anchor="middle">MedGemma 4B</text><text class="sub" x="438" y="73" text-anchor="middle" style="fill:var(--accent)">structured note · ~5s</text>
+                  <rect class="box-hl" x="186" y="130" width="150" height="58" />
+                  <text x="261" y="155" text-anchor="middle">doctor CONFIRMS</text><text class="sub" x="261" y="173" text-anchor="middle" style="fill:var(--accent)">nothing saves without it</text>
+                  <rect class="box" x="364" y="130" width="148" height="58" />
+                  <text x="438" y="155" text-anchor="middle">saved via HMS APIs</text><text class="sub" x="438" y="173" text-anchor="middle">+ spoken confirmation</text>
+                  <path class="edge" d="M158,59 H182" marker-end="url(#ah11)"/>
+                  <path class="edge-hl" d="M336,59 H360" marker-end="url(#ah11a)"/>
+                  <path class="edge-hl" d="M438,88 V126" marker-end="url(#ah11a)"/>
+                  <path class="edge" d="M336,159 H360" marker-end="url(#ah11)"/>
+                </svg>
+                <figcaption>Dictate → transcribe → structure → confirm → save. The full implemented architecture is below.</figcaption>
+              </figure>
+            </div>
+            <div class="hld reveal">
+              <span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">IMPLEMENTED ARCHITECTURE — AS BUILT (POC SETUP, NOV 2026)</span>
+              <figure style="margin:12px 0 4px">
+                <img src="hms-voice-ai-architecture.png" alt="HMS Voice AI implemented architecture: three-server setup with the existing HMS platform and the additive, isolated Voice AI stack — LiveKit, faster-whisper, MedGemma on Ollama, Kokoro TTS and a separate POC database" style="width:100%;height:auto;border:1px solid var(--line);border-radius:10px" loading="lazy" />
+                <figcaption style="color:var(--muted);font-size:13.5px;margin-top:8px">The POC ran as an additive, isolated stack beside the live HMS — the same design that then integrated module-by-module into production. (Server addresses removed for the public portfolio.)</figcaption>
               </figure>
             </div>
           </article>
