@@ -947,7 +947,7 @@
             <div>
               <div class="case-index">CASE 05</div>
               <h3>Azzy Agents — a self-hosted AI agent platform</h3>
-              <div class="context"><strong>Sarvnex Technologies</strong> — independent build: designed, built &amp; operated end-to-end</div>
+              <div class="context"><strong>Sarvnex Technologies</strong> — independent build: designed, built, set up &amp; operated end-to-end</div>
               <p><strong>The brief:</strong> build a personal AI agent platform that is genuinely model-agnostic — agents that keep working when any single model provider is down, rate-limited, or repriced — without handing the keys to a third-party AI SaaS.</p>
               <h4>What was done</h4>
               <ul>
@@ -1003,9 +1003,9 @@
                   <marker id="ah9a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
                 </defs>
                 <rect class="box" x="8" y="36" width="150" height="84" />
-                <text x="83" y="72" text-anchor="middle">users</text><text class="sub" x="83" y="92" text-anchor="middle">HTTPS · TLS</text>
+                <text x="83" y="72" text-anchor="middle">users</text><text class="sub" x="83" y="92" text-anchor="middle">HTTPS · nginx TLS edge</text>
                 <rect class="box" x="186" y="36" width="190" height="84" />
-                <text x="281" y="72" text-anchor="middle">app — API + UI</text><text class="sub" x="281" y="92" text-anchor="middle">agent sessions · tasks</text>
+                <text x="281" y="72" text-anchor="middle">web + api services</text><text class="sub" x="281" y="92" text-anchor="middle">UI :3000 · API :8000</text>
                 <rect class="box-hl" x="404" y="36" width="190" height="84" />
                 <text x="499" y="72" text-anchor="middle">agent workers</text><text class="sub" x="499" y="92" text-anchor="middle" style="fill:var(--accent)">skills · tools · memory</text>
                 <rect class="box-hl" x="622" y="36" width="190" height="84" />
@@ -1013,9 +1013,9 @@
                 <rect class="box" x="840" y="36" width="192" height="84" />
                 <text x="936" y="66" text-anchor="middle">freellmapi → providers</text><text class="sub" x="936" y="86" text-anchor="middle">multi-model fallback chain</text><text class="sub" x="936" y="102" text-anchor="middle">no vendor lock-in</text>
                 <rect class="box" x="404" y="176" width="190" height="72" />
-                <text x="499" y="206" text-anchor="middle">local embeddings</text><text class="sub" x="499" y="226" text-anchor="middle">self-hosted retrieval</text>
+                <text x="499" y="206" text-anchor="middle">PostgreSQL + pgvector</text><text class="sub" x="499" y="226" text-anchor="middle">sessions · memory · vectors</text>
                 <rect class="box" x="622" y="176" width="190" height="72" />
-                <text x="717" y="206" text-anchor="middle">data &amp; memory store</text><text class="sub" x="717" y="226" text-anchor="middle">sessions · vectors · files</text>
+                <text x="717" y="206" text-anchor="middle">Redis</text><text class="sub" x="717" y="226" text-anchor="middle">task queues · cache</text>
                 <rect class="box" x="8" y="176" width="368" height="72" />
                 <text x="192" y="206" text-anchor="middle">operations layer</text><text class="sub" x="192" y="226" text-anchor="middle">Docker Compose on EC2 · healthchecks · watchdog · scheduled backups · cert management</text>
                 <path class="edge" d="M158,78 H182" marker-end="url(#ah9)"/>
@@ -1029,7 +1029,7 @@
             </figure>
             <div class="hld-notes">
               <div class="hld-note"><strong>Design principle</strong>Providers are interchangeable parts, not dependencies. The gateway owns routing, so models can be swapped, repriced or replaced without touching agent code.</div>
-              <div class="hld-note"><strong>Failover &amp; cost</strong>A cost-optimised fallback chain keeps inference running at near-zero marginal cost; embeddings and memory stay local, so retrieval never depends on an outside API.</div>
+              <div class="hld-note"><strong>Failover &amp; cost</strong>A cost-optimised fallback chain keeps inference running at near-zero marginal cost; embeddings and memory stay local in PostgreSQL + pgvector, so retrieval never depends on an outside API.</div>
               <div class="hld-note"><strong>Operations</strong>One Compose stack on EC2 with healthchecks, a watchdog, scheduled backups and managed certificates — small surface, production discipline.</div>
             </div>
           </div>
@@ -1091,11 +1091,11 @@
             <div>
               <div class="case-index">CASE 07</div>
               <h3>Umangverse — the immersive UMANG experience</h3>
-              <div class="context"><strong>NeGD (MeitY) · UMANG ecosystem</strong> — designed &amp; built end-to-end</div>
+              <div class="context"><strong>NeGD (MeitY) · UMANG ecosystem</strong> — designed, built &amp; set up end-to-end</div>
               <p><strong>The brief:</strong> design and build Umangverse — the immersive web experience in the UMANG ecosystem — and own its platform end-to-end: deployment, hardening and security assurance to the same standard as the core platform.</p>
               <h4>What was done</h4>
               <ul>
-                <li>Built the experience end-to-end and deployed it as a <strong>containerized service behind a reverse proxy with TLS</strong> on NeGD infrastructure — the application listens on loopback only; the proxy is the single public face.</li>
+                <li>Built the experience end-to-end (<strong>Vite + TypeScript</strong>, served by nginx) and deployed it as a <strong>containerized service behind a reverse proxy with TLS</strong> on NeGD infrastructure — the application listens on loopback only; the proxy is the single public face.</li>
                 <li>Delivered a <strong>full SAST review</strong> of the codebase — a findings report with severity ratings and remediation guidance the team could act on directly.</li>
                 <li>Took the experience to its <strong>v2.0 release</strong> under the same release discipline as the core UMANG platform.</li>
               </ul>
@@ -1143,13 +1143,13 @@
                 <rect class="box" x="8" y="36" width="150" height="84" />
                 <text x="83" y="72" text-anchor="middle">visitors</text><text class="sub" x="83" y="92" text-anchor="middle">UMANG ecosystem</text>
                 <rect class="box" x="186" y="36" width="200" height="84" />
-                <text x="286" y="72" text-anchor="middle">Apache reverse proxy</text><text class="sub" x="286" y="92" text-anchor="middle">TLS termination · only public face</text>
+                <text x="286" y="72" text-anchor="middle">Apache reverse proxy</text><text class="sub" x="286" y="92" text-anchor="middle">TLS termination (Let's Encrypt) · only public face</text>
                 <rect class="box-hl" x="414" y="20" width="618" height="116" />
                 <text x="723" y="46" text-anchor="middle">NeGD virtual machine — Docker host</text>
                 <rect class="box" x="434" y="58" width="270" height="62" />
-                <text x="569" y="84" text-anchor="middle">Umangverse container</text><text class="sub" x="569" y="104" text-anchor="middle">application · loopback :8080 only</text>
+                <text x="569" y="84" text-anchor="middle">Umangverse container</text><text class="sub" x="569" y="104" text-anchor="middle">nginx serving the built app · loopback :8080 only</text>
                 <rect class="box" x="724" y="58" width="288" height="62" />
-                <text x="868" y="84" text-anchor="middle">experience assets</text><text class="sub" x="868" y="104" text-anchor="middle">static content · media · config</text>
+                <text x="868" y="84" text-anchor="middle">Vite + TypeScript build</text><text class="sub" x="868" y="104" text-anchor="middle">src → dist · Playwright e2e tests</text>
                 <rect class="box" x="186" y="176" width="380" height="72" />
                 <text x="376" y="206" text-anchor="middle">security assurance</text><text class="sub" x="376" y="226" text-anchor="middle">full SAST review · findings report · remediation cycle</text>
                 <rect class="box" x="594" y="176" width="438" height="72" />
@@ -1162,7 +1162,7 @@
             <div class="hld-notes">
               <div class="hld-note"><strong>Design principle</strong>Minimal public surface by architecture, not by firewall rules alone: bind the app to loopback, publish only the proxy, terminate TLS at the edge.</div>
               <div class="hld-note"><strong>Assurance</strong>The codebase went through a full SAST review with a severity-rated findings report — security is a release gate, not an afterthought.</div>
-              <div class="hld-note"><strong>Delivery</strong>Containerized deployment means the same image promotes from test to production unchanged, under the UMANG platform's release discipline.</div>
+              <div class="hld-note"><strong>Delivery</strong>Containerized deployment means the same image promotes from test to production unchanged — with Playwright end-to-end tests in the project — under the UMANG platform's release discipline.</div>
             </div>
           </div>
 
@@ -1390,7 +1390,7 @@
               <h3>Education</h3>
               <ul>
                 <li><div class="t">MSc in Data Science <span class="hl">— in progress</span></div><div class="s">Symbiosis International University · 2025 – present</div></li>
-                <li><div class="t">Minor Degree in Data Science <span class="hl">— in progress</span></div><div class="s">IIT Guwahati · 2025 – Jun 2026</div></li>
+                <li><div class="t">Minor Degree in Data Science <span class="hl">— completed</span></div><div class="s">IIT Guwahati · 2025 – Sep 2026</div></li>
                 <li><div class="t">PG Diploma in Information Technology (PGDIT)</div><div class="s">Symbiosis Centre for Distance Learning · 2020 – 2022</div></li>
                 <li><div class="t">Bachelor of Arts</div><div class="s">University of Delhi · 2016 – 2019</div></li>
               </ul>
