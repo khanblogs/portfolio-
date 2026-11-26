@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zero-downtime AWS migration for regulated fintech — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Active-active EKS migration for a regulated fintech — weighted traffic shifts, reversible at every step." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/fintech-aws-migration/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Zero-downtime AWS migration for regulated fintech — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Active-active EKS migration for a regulated fintech — weighted traffic shifts, reversible at every step." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/fintech-aws-migration/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 02</p>
+        <h1 class="case-h1">Zero-downtime AWS migration for regulated fintech</h1>
+        <p class="case-tag mono">Fintech · Migration</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>Creditech Solutions (AlphaMoney)</strong> — Lead DevOps &amp; MLOps Engineer, Feb 2024 – Aug 2025</div>
+              <p><strong>The brief:</strong> migrate a regulated fintech workload on AWS — a domain where downtime means compliance risk — and modernize the platform's cost base without touching customer experience.</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Executed the migration as an active-active EKS move with Route 53 weighted traffic shifts and Terraform-managed landing zones — traffic moved in measured, reversible steps.</li>
+                <li>Replaced manual provisioning with reusable Terraform modules, Karpenter-driven node consolidation and right-sized RDS PostgreSQL tiers — cost treated as an architectural input, reviewed at every release.</li>
+                <li>Extended platform and DevOps practices across parent-group ventures — <strong>AlphaCorp and Alpha Design Studio</strong> — delivering cloud-hosted ERP and a secure corporate intranet that standardized infrastructure across three sister organizations.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">AWS</span><span class="chip">EKS active-active</span><span class="chip">Route 53</span>
+                <span class="chip">Terraform</span><span class="chip">Karpenter</span><span class="chip">RDS PostgreSQL</span>
+                <span class="chip">GitHub Actions</span><span class="chip">FinOps</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 250" role="img" aria-label="Active-active EKS migration with Route 53 weighted traffic shifts, Terraform landing zones and right-sized RDS">
+                  <defs>
+                    <marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="96" width="110" height="58" />
+                  <text x="63" y="121" text-anchor="middle">users</text><text class="sub" x="63" y="139" text-anchor="middle">regulated fintech</text>
+                  <rect class="box" x="150" y="96" width="136" height="58" />
+                  <text x="218" y="121" text-anchor="middle">Route 53</text><text class="sub" x="218" y="139" text-anchor="middle">weighted shifts</text>
+                  <rect class="box-hl" x="318" y="38" width="194" height="62" />
+                  <text x="415" y="63" text-anchor="middle">EKS · stack A</text><text class="sub" x="415" y="81" text-anchor="middle" style="fill:var(--accent)">active</text>
+                  <rect class="box-hl" x="318" y="118" width="194" height="62" />
+                  <text x="415" y="143" text-anchor="middle">EKS · stack B</text><text class="sub" x="415" y="161" text-anchor="middle" style="fill:var(--accent)">active</text>
+                  <rect class="box" x="150" y="182" width="160" height="56" />
+                  <text x="230" y="205" text-anchor="middle">Terraform landing zones</text><text class="sub" x="230" y="223" text-anchor="middle">Karpenter · RDS right-sized</text>
+                  <path class="edge" d="M118,125 H146" marker-end="url(#ah2)"/>
+                  <path class="edge" d="M286,110 C300,110 302,69 314,69" marker-end="url(#ah2)"/>
+                  <path class="edge" d="M286,140 C300,140 302,149 314,149" marker-end="url(#ah2)"/>
+                  <path class="edge" d="M230,180 V156" />
+                  <text class="label" x="238" y="168">drives</text>
+                </svg>
+                <figcaption>Active–active EKS with weighted Route 53 shifts — traffic moved gradually, customer impact stayed at zero.</figcaption>
+              </figure>
+            </div>
+          </article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/umang-platform/">← UMANG — running India's national super-app</a><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/bank-statement-analyzer-mlops/">MLOps in production: Bank Statement Analyzer →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

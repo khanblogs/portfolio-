@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UMANG — running India's national super-app — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Owning the AWS platform behind UMANG — hybrid EKS + ECS, multi-AZ Envoy ingress, KEDA autoscaling and SLO-gated releases." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/umang-platform/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="UMANG — running India's national super-app — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Owning the AWS platform behind UMANG — hybrid EKS + ECS, multi-AZ Envoy ingress, KEDA autoscaling and SLO-gated releases." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/umang-platform/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 01</p>
+        <h1 class="case-h1">UMANG — running India's national super-app</h1>
+        <p class="case-tag mono">Flagship · National platform</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>Digital India Corporation · NeGD (MeitY)</strong> — Senior DevOps Engineer, Nov 2025 – present</div>
+              <p><strong>The brief:</strong> own the AWS platform behind UMANG — the national super-app for citizen services at national scale</strong> — alongside DevOps delivery for NITI Aayog flagships UPMS, NITI For States, and NGO Darpan (HLD/LLD, deployments, CI/CD).</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Run the hybrid EKS + ECS estate behind multi-AZ Envoy ingress, with KEDA-driven autoscaling and releases gated on SLOs and error budgets rather than calendar dates.</li>
+                <li>Led the <strong>lift-and-shift of MyScheme into UMANG</strong> — environment parity, secure VPC peering, CI/CD wiring, FinOps-driven cost optimization, and production cutover with <strong>zero user-facing downtime</strong>.</li>
+                <li>Standardised OpenTelemetry instrumentation and shared SRE runbooks across the microservice estate — including integrations with EPFO, DigiYatra, DigiLocker and NSSO — so incidents are diagnosed from shared signals, not tribal knowledge.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">AWS</span><span class="chip">EKS + ECS</span><span class="chip">Envoy</span>
+                <span class="chip">KEDA</span><span class="chip">Terraform</span><span class="chip">ArgoCD</span>
+                <span class="chip">OpenTelemetry</span><span class="chip">Prometheus</span><span class="chip">Grafana</span>
+                <span class="chip">SLO / Error budgets</span><span class="chip">FinOps</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="UMANG platform architecture: users, multi-AZ Envoy ingress, EKS and ECS services on KEDA autoscaling, OpenTelemetry observability with SLO and error budget gates">>
+                  <defs>
+                    <marker id="ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah1a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="86" width="110" height="64" />
+                  <text x="63" y="112" text-anchor="middle">users</text><text class="sub" x="63" y="130" text-anchor="middle">citizen scale</text>
+                  <rect class="box" x="150" y="86" width="130" height="64" />
+                  <text x="215" y="112" text-anchor="middle">Envoy ingress</text><text class="sub" x="215" y="130" text-anchor="middle">multi-AZ</text>
+                  <rect class="box-hl" x="312" y="60" width="200" height="116" />
+                  <text x="412" y="88" text-anchor="middle">EKS + ECS services</text><text class="sub" x="412" y="106" text-anchor="middle">40+ microservices</text>
+                  <text class="sub" x="412" y="132" text-anchor="middle" style="fill:var(--accent)">KEDA autoscaling</text><text class="sub" x="412" y="150" text-anchor="middle" style="fill:var(--accent)">SLO · error-budget gates</text>
+                  <rect class="box" x="150" y="182" width="202" height="48" />
+                  <text x="251" y="201" text-anchor="middle">OpenTelemetry →</text><text class="sub" x="251" y="219" text-anchor="middle">Prometheus · Grafana · runbooks</text>
+                  <path class="edge" d="M118,118 H146" marker-end="url(#ah1)"/>
+                  <path class="edge" d="M280,118 H308" marker-end="url(#ah1)"/>
+                  <path class="edge-hl" d="M412,176 V206 H354" marker-end="url(#ah1a)"/>
+                </svg>
+                <figcaption>Request path → platform core → observability loop. Release gates are driven by measured SLOs, not ceremony.</figcaption>
+              </figure>
+            </div>
+          
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">KEY DECISIONS &amp; ALTERNATIVES</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Hybrid EKS + ECS, not a big-bang replatform</strong>A national citizen service cannot pause. New workloads land on EKS while stable services stay on ECS — migration risk is taken in slices, never all at once.</div>
+                <div class="hld-note"><strong>Error-budget release gates</strong>Releases are gated on measured SLOs and error budgets, not calendar pressure — the mechanism that keeps release trains boring, in the best sense.</div>
+                <div class="hld-note"><strong>KEDA event-driven autoscaling</strong>Citizen traffic spikes around government deadlines; scaling follows events and queues, not just CPU averages.</div>
+              </div></div>
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">LIMITATIONS &amp; LESSONS</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Limitations</strong>Platform-level metrics are team outcomes on a shared national platform; change windows are governed by multiple stakeholders, which trades speed for safety.</div>
+                <div class="hld-note"><strong>Lesson</strong>Observability before automation: incident response improved when telemetry and runbooks were standardised across services — shared signals, not more tooling.</div>
+                <div class="hld-note"><strong>Lesson</strong>An error budget is a negotiation tool — it turns "ship vs stability" arguments into arithmetic.</div>
+              </div></div></article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/fintech-aws-migration/">Zero-downtime AWS migration for regulated fintech →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

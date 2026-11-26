@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Azzy Agents — a self-hosted AI agent platform — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="A self-hosted AI agent platform: provider-agnostic LLM gateway with failover, local embeddings, agents that run real operations." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/azzy-agents/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Azzy Agents — a self-hosted AI agent platform — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="A self-hosted AI agent platform: provider-agnostic LLM gateway with failover, local embeddings, agents that run real operations." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/azzy-agents/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 05</p>
+        <h1 class="case-h1">Azzy Agents — a self-hosted AI agent platform</h1>
+        <p class="case-tag mono">Flagship · AI platform</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>Sarvnex Technologies</strong> — independent build: designed, built, set up &amp; operated end-to-end</div>
+              <p><strong>The brief:</strong> build a personal AI agent platform that is genuinely model-agnostic — agents that keep working when any single model provider is down, rate-limited, or repriced — without handing the keys to a third-party AI SaaS.</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Architected the platform on <strong>Docker Compose</strong> (EC2): agent API and workers sit behind an <strong>LLM gateway (OmniRoute)</strong> with provider abstraction and <strong>automatic failover across models</strong> — no single-vendor dependency anywhere in the chain.</li>
+                <li>Kept the intelligence local where it matters: a <strong>fully self-hosted embeddings pipeline</strong> for retrieval, with LLM traffic routed through a cost-optimised fallback chain — inference runs at near-zero marginal cost while staying swappable.</li>
+                <li>Operated like a production service, not a demo: TLS, health checks, backups, and a written <strong>audit of the platform's cost, reliability and certificate posture</strong>.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">AI Agents</span><span class="chip">LLM Gateway</span><span class="chip">Multi-model routing</span>
+                <span class="chip">Local embeddings</span><span class="chip">Docker Compose</span><span class="chip">Python</span>
+                <span class="chip">AWS EC2</span><span class="chip">TLS</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="Azzy Agents architecture: agent API and workers behind an LLM gateway with failover across model providers, and a local embeddings pipeline">
+                  <defs>
+                    <marker id="ah5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah5a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="86" width="110" height="64" />
+                  <text x="63" y="112" text-anchor="middle">agent API</text><text class="sub" x="63" y="130" text-anchor="middle">+ workers</text>
+                  <rect class="box-hl" x="150" y="86" width="140" height="64" />
+                  <text x="220" y="112" text-anchor="middle">LLM gateway</text><text class="sub" x="220" y="130" text-anchor="middle" style="fill:var(--accent)">routing · failover</text>
+                  <rect class="box" x="322" y="38" width="190" height="56" />
+                  <text x="417" y="61" text-anchor="middle">model providers</text><text class="sub" x="417" y="79" text-anchor="middle">swappable · no lock-in</text>
+                  <rect class="box" x="322" y="118" width="190" height="56" />
+                  <text x="417" y="141" text-anchor="middle">fallback chain</text><text class="sub" x="417" y="159" text-anchor="middle">cost-optimised</text>
+                  <rect class="box" x="150" y="182" width="202" height="48" />
+                  <text x="251" y="201" text-anchor="middle">local embeddings</text><text class="sub" x="251" y="219" text-anchor="middle">self-hosted retrieval</text>
+                  <path class="edge" d="M118,118 H146" marker-end="url(#ah5)"/>
+                  <path class="edge-hl" d="M290,100 C304,100 306,66 318,66" marker-end="url(#ah5a)"/>
+                  <path class="edge-hl" d="M290,136 C304,136 306,146 318,146" marker-end="url(#ah5a)"/>
+                </svg>
+                <figcaption>One gateway, many models: providers are interchangeable parts, not dependencies.</figcaption>
+              </figure>
+            </div>
+          
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">KEY DECISIONS &amp; ALTERNATIVES</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Provider-agnostic gateway, not direct SDKs</strong>All inference routes through OmniRoute + freellmapi, so models are swappable parts with a cost-optimised failover chain — no vendor lock-in at the agent layer.</div>
+                <div class="hld-note"><strong>Local embeddings in PostgreSQL + pgvector</strong>Retrieval stays self-hosted instead of an external vector SaaS — one less dependency, one less data egress.</div>
+                <div class="hld-note"><strong>Compose on one node, deliberately</strong>At current scale a disciplined Docker Compose stack beats operating Kubernetes for a personal platform — the complexity budget is spent on the agents, not the substrate.</div>
+              </div></div>
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">LIMITATIONS &amp; LESSONS</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Limitations</strong>Single-node deployment is not high-availability, and the cost strategy leans on free model tiers — a production client deployment would pin paid models behind the same gateway.</div>
+                <div class="hld-note"><strong>Lesson</strong>Failover is a product feature: the day a free model degraded, the chain absorbed it and no agent task failed.</div>
+                <div class="hld-note"><strong>Lesson</strong>Memory quality beats model size — curated local embeddings improved agent answers more than a bigger LLM did.</div>
+              </div></div></article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/azure-gcp-replatforming/">← Azure → GCP re-platforming, finished early</a><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/pbm-portal/">PBM Portal — Ministry of Finance, staging to production →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

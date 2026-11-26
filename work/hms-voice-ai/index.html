@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HMS Voice AI — the doctor dictates, the system writes — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Doctors dictate in Hinglish; self-hosted AI writes the structured note. Confirm-before-save, audio never leaves the hospital." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/hms-voice-ai/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HMS Voice AI — the doctor dictates, the system writes — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Doctors dictate in Hinglish; self-hosted AI writes the structured note. Confirm-before-save, audio never leaves the hospital." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/hms-voice-ai/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 09</p>
+        <h1 class="case-h1">HMS Voice AI — the doctor dictates, the system writes</h1>
+        <p class="case-tag mono">Flagship · Healthcare AI</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>NeGD (MeitY) · HMS hospital platform</strong> — Voice AI designed, built &amp; integrated by Shahrukh</div>
+              <p><strong>The use case:</strong> a doctor finishes a patient round and simply <em>speaks</em> — in the Hindi-English mix (Hinglish) she actually uses. The structured clinical note appears on screen for her confirmation. No typing, no templates, no data leaving the hospital.</p>
+              <h4>The scenario, as implemented</h4>
+              <ul>
+                <li><strong>1 · Dictate</strong> — the doctor dictates from the browser voice panel: symptoms, vitals, diagnosis, medicines, advice — in Hindi, Hinglish or English.</li>
+                <li><strong>2 · Transcribe</strong> — LiveKit streams the audio (WebRTC); <strong>faster-whisper</strong> transcribes it on the hospital's own server.</li>
+                <li><strong>3 · Structure</strong> — <strong>MedGemma 4B</strong> (Google's medical LLM, self-hosted on Ollama) turns the transcript into a structured note — fields, doses and vitals in their right places.</li>
+                <li><strong>4 · Confirm</strong> — the doctor reviews and confirms on screen. <strong>Nothing is ever saved without clinician confirmation</strong> — the confirm-gate is architectural, not a setting.</li>
+                <li><strong>5 · Save &amp; speak back</strong> — the note saves through the existing HMS service APIs, and <strong>Kokoro TTS</strong> speaks the confirmation summary back to the doctor.</li>
+              </ul>
+              <h4>From POC to hospital-wide</h4>
+              <ul>
+                <li>Proved as an isolated POC alongside the live system — live data untouched — and validated module-by-module across EMR, OPD, Pathology, Radiology, Pharmacy, Billing, IPD and Discharge on Hinglish dictation.</li>
+                <li>Then <strong>integrated into every clinical module</strong> of the 20-microservice HMS — EMR doctor notes, IPD rounds and nurse notes, ICU, OT, radiology, pathology and discharge — behind the platform's JWT gateway.</li>
+                <li>Performance work centred on the inference path: keeping the model warm, trimming decoding parameters and parallelising transcription, until dictation felt like a tool rather than a wait.</li>
+                <li>Every model is <strong>free and open-source, self-hosted</strong> — patient audio is processed inside the hospital's own servers and never leaves. Every component is free and open-source.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">Voice AI</span><span class="chip">faster-whisper</span><span class="chip">MedGemma</span>
+                <span class="chip">Ollama</span><span class="chip">LiveKit · WebRTC</span><span class="chip">Kokoro TTS</span>
+                <span class="chip">Docker</span><span class="chip">.NET microservices</span><span class="chip">YARP gateway</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="HMS Voice AI flow: doctor dictates in Hinglish, LiveKit streams audio, Whisper transcribes, MedGemma structures the note, the doctor confirms, and the note saves via HMS APIs with a spoken confirmation">
+                  <defs>
+                    <marker id="ah11" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah11a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="30" width="150" height="58" />
+                  <text x="83" y="55" text-anchor="middle">doctor dictates</text><text class="sub" x="83" y="73" text-anchor="middle">Hinglish · browser mic</text>
+                  <rect class="box" x="186" y="30" width="150" height="58" />
+                  <text x="261" y="55" text-anchor="middle">faster-whisper</text><text class="sub" x="261" y="73" text-anchor="middle">LiveKit stream · STT</text>
+                  <rect class="box-hl" x="364" y="30" width="148" height="58" />
+                  <text x="438" y="55" text-anchor="middle">MedGemma 4B</text><text class="sub" x="438" y="73" text-anchor="middle" style="fill:var(--accent)">structured note</text>
+                  <rect class="box-hl" x="186" y="130" width="150" height="58" />
+                  <text x="261" y="155" text-anchor="middle">doctor CONFIRMS</text><text class="sub" x="261" y="173" text-anchor="middle" style="fill:var(--accent)">nothing saves without it</text>
+                  <rect class="box" x="364" y="130" width="148" height="58" />
+                  <text x="438" y="155" text-anchor="middle">saved via HMS APIs</text><text class="sub" x="438" y="173" text-anchor="middle">+ spoken confirmation</text>
+                  <path class="edge" d="M158,59 H182" marker-end="url(#ah11)"/>
+                  <path class="edge-hl" d="M336,59 H360" marker-end="url(#ah11a)"/>
+                  <path class="edge-hl" d="M438,88 V126" marker-end="url(#ah11a)"/>
+                  <path class="edge" d="M336,159 H360" marker-end="url(#ah11)"/>
+                </svg>
+                <figcaption>Dictate → transcribe → structure → confirm → save. The full implemented architecture is below.</figcaption>
+              </figure>
+            </div>
+            <div class="hld reveal">
+              <span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">IMPLEMENTED ARCHITECTURE — AS BUILT (POC SETUP, NOV 2026)</span>
+              <figure style="margin:12px 0 4px">
+                <img src="/portfolio-/assets/hms-voice-ai-architecture.webp" loading="lazy" alt="HMS Voice AI implemented architecture: three-server setup with the existing HMS platform and the additive, isolated Voice AI stack — LiveKit, faster-whisper, MedGemma on Ollama, Kokoro TTS and a separate POC database" style="width:100%;height:auto;border:1px solid var(--line);border-radius:10px" loading="lazy" />
+                <figcaption style="color:var(--muted);font-size:13.5px;margin-top:8px">The POC ran as an additive, isolated stack beside the live HMS — the same design that then integrated module-by-module into production. (Server addresses removed for the public portfolio.)</figcaption>
+              </figure>
+            </div>
+          
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">KEY DECISIONS &amp; ALTERNATIVES</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Self-hosted open-source models, not cloud AI APIs</strong>Cloud speech/LLM APIs were rejected on data-residency grounds: patient audio must never leave the hospital. Whisper + MedGemma + Kokoro run on hospital hardware, with no licence cost and no external API in the path.</div>
+                <div class="hld-note"><strong>Confirm-before-save as architecture</strong>The clinician-confirmation gate is built into the data path, not a UI preference — nothing reaches the record unreviewed.</div>
+                <div class="hld-note"><strong>Isolated POC first</strong>The stack proved itself in a separate compose project and database beside the live HMS; only validated modules were integrated. A larger model (Qwen3-8B) was evaluated and rejected — it exceeded the ~6 GB POC memory budget.</div>
+              </div></div>
+            <div class="hld reveal"><span class="kicker no-bar mono" style="font-size:11.5px;color:var(--accent);letter-spacing:0.14em;">LIMITATIONS &amp; LESSONS</span>
+              <div class="hld-notes">
+                <div class="hld-note"><strong>Performance is an inference problem</strong>The latency work lived in the inference path: keeping the model warm, trimming decoding parameters, parallelising transcription on a CPU-only host. A GPU node is the documented scaling path when volume demands it.</div>
+                <div class="hld-note"><strong>Known limitation</strong>Whisper can garble Hindi numerals in fast speech — the editable transcript review exists precisely for this.</div>
+                <div class="hld-note"><strong>Lesson</strong>In clinical AI, the trust feature is the gate, not the model. Adoption followed the confirm step, not the demo.</div>
+              </div></div></article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/government-production-fleet/">← Government production fleet — NFS, UPMS &amp; beyond</a><a href="/portfolio-/work/">All case studies</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

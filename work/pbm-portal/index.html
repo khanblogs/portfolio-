@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PBM Portal — Ministry of Finance, staging to production — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Ministry of Finance portal from staging chaos to audited NGC production — bulk AI summaries, VAPT/SAST closure, weekly backups." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/pbm-portal/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PBM Portal — Ministry of Finance, staging to production — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Ministry of Finance portal from staging chaos to audited NGC production — bulk AI summaries, VAPT/SAST closure, weekly backups." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/pbm-portal/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 06</p>
+        <h1 class="case-h1">PBM Portal — Ministry of Finance, staging to production</h1>
+        <p class="case-tag mono">Government · Finance platform</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>NeGD (MeitY) · Ministry of Finance programme</strong> — Senior DevOps Engineer</div>
+              <p><strong>The brief:</strong> own DevOps for the PBM programme-management portal end-to-end — staging operations day to day, and a full production go-live on the ministry's secured on-premise network.</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Run <strong>staging + production</strong> end-to-end: Dockerized <strong>NestJS backend + Angular frontend</strong> behind Apache, PostgreSQL, scripted deployments with <strong>pre-deploy database backups</strong> and post-deploy seed/permission verification on every release.</li>
+                <li>Took the portal <strong>live in production on the ministry's on-prem network</strong> — frontend, backend, database and an AI service wired across the LAN under Sectigo TLS — with <strong>automated weekly backups</strong> of files and both databases to S3-compatible storage.</li>
+                <li>Shipped an <strong>AI service (LLM + embeddings)</strong> for proposal summaries, including a <strong>bulk-summary API</strong> (up to 100 proposals per job with progress tracking), and closed <strong>VAPT/SAST</strong> findings through audited rounds — RSA-OAEP password encryption, OTP hardening, permission-model fixes.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">Docker</span><span class="chip">NestJS</span><span class="chip">Angular</span>
+                <span class="chip">PostgreSQL</span><span class="chip">Apache</span><span class="chip">FastAPI</span>
+                <span class="chip">LLM APIs</span><span class="chip">Embeddings</span><span class="chip">S3</span>
+                <span class="chip">VAPT / SAST</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="PBM Portal production architecture: Apache frontend to NestJS backend and PostgreSQL, with a FastAPI AI service for proposal summaries and weekly backups to S3 storage">
+                  <defs>
+                    <marker id="ah6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah6a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="60" width="110" height="58" />
+                  <text x="63" y="84" text-anchor="middle">Angular FE</text><text class="sub" x="63" y="102" text-anchor="middle">Apache · TLS</text>
+                  <rect class="box-hl" x="150" y="60" width="140" height="58" />
+                  <text x="220" y="84" text-anchor="middle">NestJS backend</text><text class="sub" x="220" y="102" text-anchor="middle" style="fill:var(--accent)">Docker · scripted deploys</text>
+                  <rect class="box" x="322" y="60" width="190" height="58" />
+                  <text x="417" y="84" text-anchor="middle">PostgreSQL</text><text class="sub" x="417" y="102" text-anchor="middle">portal + AI databases</text>
+                  <rect class="box" x="150" y="146" width="140" height="58" />
+                  <text x="220" y="170" text-anchor="middle">AI service</text><text class="sub" x="220" y="188" text-anchor="middle">LLM summaries · bulk API</text>
+                  <rect class="box" x="322" y="146" width="190" height="58" />
+                  <text x="417" y="170" text-anchor="middle">S3 storage</text><text class="sub" x="417" y="188" text-anchor="middle">weekly backups</text>
+                  <path class="edge" d="M118,89 H146" marker-end="url(#ah6)"/>
+                  <path class="edge" d="M290,89 H318" marker-end="url(#ah6)"/>
+                  <path class="edge-hl" d="M220,118 V142" marker-end="url(#ah6a)"/>
+                  <path class="edge" d="M290,175 H318" marker-end="url(#ah6)"/>
+                </svg>
+                <figcaption>Staging discipline, production stakes: every release backed up, seeded and verified.</figcaption>
+              </figure>
+            </div>
+          </article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/azzy-agents/">← Azzy Agents — a self-hosted AI agent platform</a><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/umangverse/">Umangverse — the immersive UMANG experience →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

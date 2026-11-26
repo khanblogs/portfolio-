@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Azure → GCP re-platforming, finished early — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Azure → GCP re-platforming on GKE — endpoint parity verified service-by-service before cutover, Istio mesh for traffic policy." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/azure-gcp-replatforming/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Azure → GCP re-platforming, finished early — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Azure → GCP re-platforming on GKE — endpoint parity verified service-by-service before cutover, Istio mesh for traffic policy." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/azure-gcp-replatforming/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 04</p>
+        <h1 class="case-h1">Azure → GCP re-platforming, finished early</h1>
+        <p class="case-tag mono">Re-platforming</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>Smartvizx</strong> — DevOps Architect, Jul–Dec 2023 · migration-specific engagement</div>
+              <p><strong>The brief:</strong> re-platform a production Azure estate onto Google Cloud — full parity — verified endpoint by endpoint before cutover.</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Re-platformed the workloads onto GKE, pipelines rebuilt on Cloud Build, and keyless service auth via Workload Identity — endpoint parity verified service-by-service before cutover.</li>
+                <li>Introduced the Istio service mesh — mTLS, per-route retry/timeout policies, and deliberate traffic shaping — so latency behaviour became a policy, not an accident.</li>
+                <li>Left no key-management debt: no long-lived credentials, no snowflake environments.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">Azure → GCP</span><span class="chip">GKE</span><span class="chip">Cloud Build</span>
+                <span class="chip">Workload Identity</span><span class="chip">Istio</span><span class="chip">mTLS</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 240" role="img" aria-label="Azure to GCP migration: Cloud Build pipelines to GKE with Workload Identity keyless auth, Istio mesh for traffic shaping and mTLS">
+                  <defs>
+                    <marker id="ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--soft)"/></marker>
+                    <marker id="ah4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="96" width="96" height="58" />
+                  <text x="56" y="121" text-anchor="middle">Azure</text><text class="sub" x="56" y="139" text-anchor="middle">legacy estate</text>
+                  <rect class="box" x="132" y="96" width="120" height="58" />
+                  <text x="192" y="121" text-anchor="middle">Cloud Build</text><text class="sub" x="192" y="139" text-anchor="middle">pipelines</text>
+                  <rect class="box-hl" x="280" y="72" width="232" height="106" />
+                  <text x="396" y="100" text-anchor="middle">GKE platform</text><text class="sub" x="396" y="118" text-anchor="middle" style="fill:var(--accent)">Workload Identity · keyless</text>
+                  <text class="sub" x="396" y="144" text-anchor="middle">Istio mesh · mTLS · retries</text><text class="sub" x="396" y="162" text-anchor="middle" style="fill:var(--accent)">per-route traffic policy</text>
+                  <path class="edge-hl" d="M104,125 H128" marker-end="url(#ah4a)"/>
+                  <path class="edge-hl" d="M252,125 H276" marker-end="url(#ah4a)"/>
+                </svg>
+                <figcaption>GKE re-platform with keyless auth from day one; the mesh paid for itself in latency.</figcaption>
+              </figure>
+            </div>
+          </article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/bank-statement-analyzer-mlops/">← MLOps in production: Bank Statement Analyzer</a><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/azzy-agents/">Azzy Agents — a self-hosted AI agent platform →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>

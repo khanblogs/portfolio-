@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MLOps in production: Bank Statement Analyzer — Case Study | Shahrukh Khan</title>
+    <meta name="description" content="Production ML for credit decisioning: FastAPI inference, Airflow pipelines, MLflow registry, Kubernetes autoscaling." />
+    <meta name="author" content="Shahrukh Khan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://khanblogs.github.io/portfolio-/work/bank-statement-analyzer-mlops/" />
+    <meta name="theme-color" content="#0b0d10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MLOps in production: Bank Statement Analyzer — Case Study | Shahrukh Khan" />
+    <meta property="og:description" content="Production ML for credit decisioning: FastAPI inference, Airflow pipelines, MLflow registry, Kubernetes autoscaling." />
+    <meta property="og:url" content="https://khanblogs.github.io/portfolio-/work/bank-statement-analyzer-mlops/" />
+    <meta property="og:image" content="https://khanblogs.github.io/portfolio-/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1b34'/%3E%3Ctext x='32' y='45' font-family='Arial' font-size='36' font-weight='bold' fill='%23d4b77a' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/portfolio-/assets/site.css" />
+    <link rel="stylesheet" href="/portfolio-/assets/v2.css" />
+    
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="progressBar" aria-hidden="true"></div>
+
+    <header class="nav"><div class="wrap nav-in">
+      <a class="nav-name" href="/portfolio-/">Shahrukh Khan<span style="color:var(--accent)">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/portfolio-/work/">Work</a>
+        <a href="/portfolio-/#services">Services</a>
+        <a href="/portfolio-/#stack">Stack</a>
+        <a href="/portfolio-/#credentials">Credentials</a>
+        <a href="/portfolio-/#experience">Experience</a>
+        <a href="/portfolio-/consulting/">Consulting</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé ↓</a>
+      <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',document.body.classList.contains('menu-open'))">☰</button>
+    </div></header>
+<main id="main">
+      <section class="cases casepage"><div class="wrap">
+        <p class="crumb mono"><a href="/portfolio-/">Home</a> · <a href="/portfolio-/work/">Work</a> · CASE 03</p>
+        <h1 class="case-h1">MLOps in production: Bank Statement Analyzer</h1>
+        <p class="case-tag mono">Fintech · MLOps</p>
+        <article class="case reveal">
+            <div>
+              
+              
+              <div class="context"><strong>Creditech Solutions (AlphaMoney)</strong> — Lead DevOps &amp; MLOps Engineer</div>
+              <p><strong>The brief:</strong> ship a production ML system that ingests and classifies bank statements for credit decisioning — a pipeline that had to be reliable, observable, and cheap to operate day after day.</p>
+              <h4>What was done</h4>
+              <ul>
+                <li>Shipped a <strong>production Bank Statement Analyzer</strong> ingesting and classifying <strong>thousands of statements daily</strong> — a <strong>FastAPI inference service</strong> backed by <strong>Airflow-orchestrated ETL and feature pipelines</strong>, an <strong>MLflow model registry</strong>, and Kubernetes-native autoscaling.</li>
+                <li>Designed for MLOps maturity: versioned models in a registry, reproducible feature pipelines, and inference that scales with demand instead of sitting over-provisioned.</li>
+                <li>Applied the same discipline on consulting mandates — GPU workload orchestration and AI/ML CI/CD for Aftershoot, and an 8-week <strong>Kubeflow + MLflow real-time &amp; batch inference HLD/LLD</strong> for ZS Associates.</li>
+              </ul>
+              <div class="chips">
+                <span class="chip">FastAPI</span><span class="chip">MLflow</span><span class="chip">Kubeflow</span>
+                <span class="chip">Airflow</span><span class="chip">Kubernetes</span><span class="chip">Vector DB</span>
+                <span class="chip">Python</span><span class="chip">GPU orchestration</span>
+              </div>
+            </div>
+            <div class="case-visual">
+              
+              <figure class="diagram" style="margin:0">
+                <svg class="dg" viewBox="0 0 520 250" role="img" aria-label="MLOps pipeline: raw statements through Airflow ETL, MLflow registry, FastAPI inference on Kubernetes, to credit decisions">
+                  <defs>
+                    <marker id="ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+                  </defs>
+                  <rect class="box" x="8" y="52" width="96" height="58" />
+                  <text x="56" y="77" text-anchor="middle">raw</text><text class="sub" x="56" y="95" text-anchor="middle">statements</text>
+                  <rect class="box" x="132" y="52" width="120" height="58" />
+                  <text x="192" y="77" text-anchor="middle">Airflow</text><text class="sub" x="192" y="95" text-anchor="middle">ETL + features</text>
+                  <rect class="box" x="280" y="52" width="110" height="58" />
+                  <text x="335" y="77" text-anchor="middle">MLflow</text><text class="sub" x="335" y="95" text-anchor="middle">model registry</text>
+                  <rect class="box-hl" x="132" y="140" width="258" height="70" />
+                  <text x="261" y="166" text-anchor="middle">FastAPI inference · Kubernetes</text><text class="sub" x="261" y="184" text-anchor="middle" style="fill:var(--accent)">autoscaled · thousands/day</text>
+                  <rect class="box" x="418" y="140" width="94" height="70" />
+                  <text x="465" y="166" text-anchor="middle">credit</text><text class="sub" x="465" y="184" text-anchor="middle">decisions</text>
+                  <path class="edge-hl" d="M104,81 H128" marker-end="url(#ah3)"/>
+                  <path class="edge-hl" d="M252,81 H276" marker-end="url(#ah3)"/>
+                  <path class="edge-hl" d="M335,110 V136" marker-end="url(#ah3)"/>
+                  <path class="edge-hl" d="M390,175 H414" marker-end="url(#ah3)"/>
+                </svg>
+                <figcaption>Feature pipelines stay reproducible, models stay versioned, inference scales with demand.</figcaption>
+              </figure>
+            </div>
+          </article>
+        <nav class="case-nav" aria-label="More case studies"><a href="/portfolio-/work/fintech-aws-migration/">← Zero-downtime AWS migration for regulated fintech</a><a href="/portfolio-/work/">All case studies</a><a href="/portfolio-/work/azure-gcp-replatforming/">Azure → GCP re-platforming, finished early →</a></nav>
+      </div></section></main>
+    <footer class="foot"><div class="wrap foot-in">
+      <div>© 2026 Shahrukh Khan · New Delhi, India</div>
+      <div class="foot-links">
+        <a href="/portfolio-/work/">Work</a><a href="/portfolio-/consulting/">Consulting</a>
+        <a href="/portfolio-/assets/Shahrukh_Khan_Resume.pdf" download>Résumé (PDF)</a>
+        <a href="https://www.linkedin.com/in/shahrukhkhan-devops" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/khanblogs" rel="noopener">GitHub</a>
+        <a href="mailto:iamdevopskhan@gmail.com">Email</a>
+      </div>
+    </div></footer>
+    <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+    <script src="/portfolio-/assets/site.js" defer></script>
+  </body>
+</html>
